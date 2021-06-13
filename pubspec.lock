@@ -62,11 +62,32 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_pusher_client:
+    dependency: "direct main"
+    description:
+      name: flutter_pusher_client
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.1"
+  laravel_echo:
+    dependency: "direct main"
+    description:
+      name: laravel_echo
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.9"
   matcher:
     dependency: transitive
     description:
@@ -151,3 +172,4 @@ packages:
     version: "2.1.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
+  flutter: ">=1.12.0"

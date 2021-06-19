@@ -1,34 +1,36 @@
 import 'package:laravel_echo/laravel_echo.dart';
 import 'package:flutter_pusher_client/flutter_pusher.dart';
 
-const baseUrl = '';
+const scheme = 'http';
+const host = '192.168.43.152'; // change this to your own host
+const port = 6001;
 
-initializeEcho(FlutterPusher pusherClient) {
-  Echo echo = Echo({
+Echo initializeEcho(FlutterPusher pusherClient) {
+  return Echo({
     'broadcaster': 'pusher',
     'client': pusherClient,
+    'wsHost': host,
+    'wsPort': port,
+    'disableStats': true,
+    'forceTLS': false,
+    'enabledTransport': ['ws'],
   });
-
-  return echo;
 }
 
-initializePusher() {
+FlutterPusher initializePusher() {
   PusherOptions options = PusherOptions(
-    host: '10.0.2.2',
-    port: 6001,
+    host: host,
+    port: port,
     encrypted: false,
-    cluster: 'ap1',
   );
 
-  FlutterPusher pusher = FlutterPusher(
-    'app',
+  return FlutterPusher(
+    'ABCDEFG',
     options,
     onError: handleConnectionError,
     onConnectionStateChange: handleConnectionStateChanged,
     enableLogging: true,
   );
-
-  return pusher;
 }
 
 handleConnectionError(ConnectionError connectionError) {

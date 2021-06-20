@@ -86,4 +86,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     print(response.statusCode);
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+    echo!.channel('home').stopListening('SendMessage');
+    echo!.channel('home').unsubscribe();
+  }
 }

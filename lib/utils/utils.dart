@@ -29,7 +29,7 @@ FlutterPusher initializePusher() {
     options,
     onError: handleConnectionError,
     onConnectionStateChange: handleConnectionStateChanged,
-    enableLogging: true,
+    enableLogging: false,
   );
 }
 
